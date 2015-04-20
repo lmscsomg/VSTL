@@ -70,9 +70,21 @@ namespace VSTL {
             return *this;
         }
         
-        //bug?
-        reverse_iterator& operator++(int i){
-            
+        reverse_iterator operator++(int){
+            reverse_iterator temp = *this;
+            ++(*this);
+            return temp;
+        }
+        
+        reverse_iterator& operator--(){
+            ++base_;
+            ++cur_;
+            return *this;
+        }
+        
+        reverse_iterator operator--(int){
+            reverse_iterator temp = *this;
+            --
         }
     };
 }
